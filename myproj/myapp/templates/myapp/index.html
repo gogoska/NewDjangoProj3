@@ -1,0 +1,105 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+
+{% block main %}
+
+<img src="{% static "img/cat-and-girl.jpg" %}" class="img-fluid my-3 rounded" alt="1">
+
+<div class="row featurette my-3">
+    <h2 class="featurette-heading fw-normal lh-1 fs-2">Дратути!</h2>
+    <p class="lead fs-4">Рад приветствовать вас на моём сайте, посвященном рейтингу аниме! Здесь есть две категории
+      топов: <a class="link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
+              объективная</a> и
+          <a class="link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
+              личная</a> - обе созданы лично мной.</p>
+      <p class="lead fs-4">В объективном топе я стараюсь посмотреть на аниме с точки зрения обычного зрителя,
+      учитывая соответствующие моменты. Проще говоря, аниме из объективного топа можно легко рекомендовать
+      любому, если оно находиться высоко в топе.</p>
+      <p class="lead fs-4">В личном же топе представлены аниме, что так или иначе запали лично МНЕ в душу, или
+      которые мне просто нравятся. При этом понимаем, что сердце может подсказывать лучшее аниме, а объективно
+      оно может быть и по другому. Потому у моих любимых тайтлов может быть и не самые высокие баллы, но от того
+      я не разлюблю их)))</p>
+      <p class="lead fs-4">Ниже вы увидите вырезки из этих топов в виде "топ 5". Если хотите увидеть больше,
+      перейдите по ссылке по имени таблицы или тут в тексте.</p>
+</div>
+
+<h2><a class="link-secondary link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Объективный топ:</a></h2>
+<div class="table-responsive small">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Оценка</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-warning">
+        <td>1</td>
+        <td>Код Гиас</td>
+        <td>9.2</td>
+      </tr>
+      <tr class="table-secondary">
+        <td>2</td>
+        <td>Патриотизм Мориарти </td>
+        <td>8.8</td>
+      </tr>
+      <tr class="table-danger">
+        <td>3</td>
+        <td>Класс превосходства</td>
+        <td>8.7</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Перерождение безработного</td>
+        <td>9.4</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Игра друзей</td>
+        <td>8.4</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h2><a class="link-secondary link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Личный топ:</a></h2>
+<div class="table-responsive small">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Оценка</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-warning">
+        <td>1</td>
+        <td>Код Гиас</td>
+        <td>9.2</td>
+      </tr>
+      <tr class="table-secondary">
+        <td>2</td>
+        <td>Патриотизм Мориарти </td>
+        <td>8.8</td>
+      </tr>
+      <tr class="table-danger">
+        <td>3</td>
+        <td>Класс превосходства</td>
+        <td>8.7</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Перерождение безработного</td>
+        <td>9.4</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Игра друзей</td>
+        <td>8.4</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+{% endblock main %}
