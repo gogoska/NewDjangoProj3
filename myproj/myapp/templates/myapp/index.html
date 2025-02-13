@@ -11,10 +11,10 @@
 <div class="row featurette my-3">
     <h2 class="featurette-heading fw-normal lh-1 fs-2">Дратути!</h2>
     <p class="lead fs-4">Рад приветствовать вас на моём сайте, посвященном рейтингу аниме! Здесь есть две категории
-      топов: <a class="link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
+      топов: <a class="link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'anime-list' %}">
               объективная</a> и
-          <a class="link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">
-              личная</a> - обе созданы лично мной.</p>
+          <a class="link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'anime-list' %}">
+              личная</a> - обе созданы лично мной и обе можно найти в списке, применяя фильтр.</p>
       <p class="lead fs-4">В объективном топе я стараюсь посмотреть на аниме с точки зрения обычного зрителя,
       учитывая соответствующие моменты. Проще говоря, аниме из объективного топа можно легко рекомендовать
       любому, если оно находиться высоко в топе.</p>
@@ -26,7 +26,7 @@
       перейдите по ссылке по имени таблицы или тут в тексте.</p>
 </div>
 
-<h2><a class="link-secondary link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Объективный топ:</a></h2>
+<h2><a class="link-secondary link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'anime-list' %}">Объективный топ:</a></h2>
 <div class="table-responsive small">
   <table class="table table-striped">
     <thead>
@@ -65,7 +65,7 @@
     </tbody>
   </table>
 </div>
-<h2><a class="link-secondary link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">Личный топ:</a></h2>
+<h2><a class="link-secondary link-offset-1 link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="{% url 'anime-list' %}">Личный топ:</a></h2>
 <div class="table-responsive small">
   <table class="table table-striped">
     <thead>
