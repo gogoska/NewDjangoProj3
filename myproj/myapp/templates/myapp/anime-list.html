@@ -5,6 +5,13 @@
 
 {% block main %}
 
+<div class="row">
+    <h2 class="col">{{ filter_label }}</h2>
+    <a class="col" href="{% url 'anime-list' %}"><p class="text-end">По алфавиту</p></a>
+    <a class="col-2" href="{% url 'anime-list' %}?filter=1"><p class="text-end">По рейтингу</p></a>
+    <a class="col-2" href="{% url 'anime-list' %}?filter=2"><p class="text-end">По личному</p></a>
+</div>
+
 {% for anime in anime_list %}
 <a href="{% url 'about' pk=anime.pk %}" style="display: block; text-decoration: none; color: inherit;">
   <div style="cursor: pointer;">
