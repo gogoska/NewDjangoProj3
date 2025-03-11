@@ -2,6 +2,7 @@ import functools
 import itertools
 from re import search
 
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -75,10 +76,15 @@ def anime_list(request):
 
 
 
+    paginator = Paginator(anime_list, 3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
         'anime_list_active': True,
         'anime_list': anime_list,
         'warning_label': warning_label,
+        "page_obj": page_obj,
     }
 
     return render(request, 'myapp/anime-list.html', context=context)

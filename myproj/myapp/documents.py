@@ -1,19 +1,3 @@
-# from django_elasticsearch_dsl import Document
-# from django_elasticsearch_dsl.registries import registry
-#
-# from .models import Anime
-#
-# @registry.register_document
-# class AnimeDocument(Document):
-#     class Index:
-#         name = 'anime'
-#         settings = {'number_of_shards': 1, 'number_of_replicas': 0}
-#
-#     class Django:
-#         model = Anime
-#         fields = ['name', 'additional_name', 'short_description', 'large_description', ]
-
-
 from django.conf import settings
 from django_elasticsearch_dsl import Document, Index, fields
 from elasticsearch_dsl import analyzer, token_filter

@@ -3,6 +3,8 @@
 
 {% block title %}Список аниме{% endblock title %}
 
+
+
 {% block main %}
 
 <div class="row">
@@ -12,30 +14,59 @@
     <a class="col-2" href="{% url 'anime-list' %}?filter=2"><p class="text-end">По личному</p></a>
 </div>
 
-{% for anime in anime_list %}
-<a href="{% url 'about' pk=anime.pk %}" style="display: block; text-decoration: none; color: inherit;">
-  <div style="cursor: pointer;">
-    <div class="col-md py-3">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-                <div class="row">
-                    <strong class="col-3 d-inline-block mb-2 text-primary-emphasis">Оценка: {{ anime.main_num_rating }}</strong>
-                    <strong class="col d-inline-block mb-2 text-primary-emphasis">Место в личном топе: {{ anime.my_top_rating }}</strong>
-                </div>
+<div class="infinite-container">
+{% for anime in page_obj.object_list %}
+    <div class="infinite-item">
+        <a href="{% url 'about' pk=anime.pk %}" style="display: block; text-decoration: none; color: inherit;">
+          <div style="cursor: pointer;">
+            <div class="col-md py-3">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <div class="row">
+                            <strong class="col-3 d-inline-block mb-2 text-primary-emphasis">Оценка: {{ anime.main_num_rating }}</strong>
+                            <strong class="col d-inline-block mb-2 text-primary-emphasis">Место в личном топе: {{ anime.my_top_rating }}</strong>
+                        </div>
 
-                <h3 class="mb-0"><a class="link-dark link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="">
-                    {{ anime.name }}
-                </a></h3>
-    <!--            <div class="mb-1 text-body-secondary">Nov 12</div>-->
-                <p class="card-text mb-auto">{{ anime.short_description }}</p>
+                        <h3 class="mb-0"><a class="link-dark link-offset-1-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="">
+                            {{ anime.name }}
+                        </a></h3>
+                        <p class="card-text mb-auto">{{ anime.short_description }}</p>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img class="bd-placeholder-img" width="200" height="250" src="{{ anime.photo.url }}" alt="">
+                    </div>
+                </div>
             </div>
-            <div class="col-auto d-none d-lg-block">
-                <img class="bd-placeholder-img" width="200" height="250" src="{{ anime.photo.url }}" alt="">
-            </div>
-        </div>
+          </div>
+        </a>
     </div>
-  </div>
-</a>
 {% endfor %}
+</div>
+{% if page_obj.has_next %}
+<a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}"></a>
+{% endif %}
+
+<script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/infinite.min.js' %}"></script>
+<script>
+    var infinite = new Waypoint.Infinite({
+    element: $('.infinite-container')[0],
+    handler: function(direction) {
+
+    },
+    offset: 'bottom-in-view',
+
+    onBeforePageLoad: function () {
+    $('.spinner-border').show();
+    },
+    onAfterPageLoad: function () {
+    $('.spinner-border').hide();
+    }
+
+    });
+    
+</script>
+
 
 {% endblock main %}
