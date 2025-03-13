@@ -98,14 +98,28 @@ class AnimeDocument(Document):
         }
     )
 
-    short_description = fields.TextField(
+    # short_description = fields.TextField(
+    #     analyzer=My_analyzer,
+    #     fields={
+    #         'raw': fields.TextField(analyzer='keyword'),
+    #     }
+    # )
+    #
+    # large_description = fields.TextField(
+    #     analyzer=My_analyzer,
+    #     fields={
+    #         'raw': fields.TextField(analyzer='keyword'),
+    #     }
+    # )
+
+    review = fields.TextField(
         analyzer=My_analyzer,
         fields={
             'raw': fields.TextField(analyzer='keyword'),
         }
     )
 
-    large_description = fields.TextField(
+    description = fields.TextField(
         analyzer=My_analyzer,
         fields={
             'raw': fields.TextField(analyzer='keyword'),

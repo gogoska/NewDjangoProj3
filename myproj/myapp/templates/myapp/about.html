@@ -14,14 +14,14 @@
             <strong class="col-3 d-inline-block mb-2 text-primary-emphasis">Оценка: {{ main_num_rating }}</strong>
             <strong class="col d-inline-block mb-2 text-primary-emphasis">Место в личном топе: {{ my_top_rating }}</strong>
         </div>
-        <h4 class="featurette-heading fw-normal lh-1">Краткое описание:</h4>
-        <p class="lead">{{ short_description }}</p>
+        <h4 class="featurette-heading fw-normal lh-1">Отзыв:</h4>
+        <p class="lead">{{ review }}</p>
     </div>
     <div class="col-md-3 order-md-1">
         <img class="bd-placeholder-img" width="200" height="250" src="{{ photo.url }}" alt="">
     </div>
 </div>
-<h2 class="featurette-heading fw-normal lh-1">Полное описание:</h2>
-<p class="lead">{{ large_description }}</p>
+<h2 class="featurette-heading fw-normal lh-1">Описание:</h2>
+<p class="lead">{{ description }}</p>
 
 {% endblock main %}

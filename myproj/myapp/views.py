@@ -31,8 +31,8 @@ def about(request, pk):
     context = {
         'name': a.name,
         'additional_name': a.additional_name,
-        'short_description': a.short_description,
-        'large_description': a.large_description,
+        'review': a.review,
+        'description': a.description,
         'photo': a.photo,
         'main_num_rating': a.main_num_rating,
         'my_top_rating': a.my_top_rating,
@@ -56,8 +56,8 @@ def anime_list(request):
             fields= [
                 'name',
                 'additional_name',
-                'short_description',
-                'large_description',
+                'review',
+                'description',
             ]
         ).to_queryset()
 
